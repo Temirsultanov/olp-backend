@@ -4,6 +4,7 @@ import { formatFile } from "./format_file.mjs";
 
 const PORT = 3000;
 const HOSTNAME = "127.0.0.1";
+const CLIENT_URL = "http://localhost:8000";
 const routes = new Set(["cost", "consultation", "call", "support"]);
 
 const requestEndHandler = async (url, chunks) => {
@@ -20,7 +21,7 @@ const requestEndHandler = async (url, chunks) => {
 
 const server = http.createServer((request, response) => {
   response.setHeader("Content-Type", "text/plain");
-  response.setHeader("Access-Control-Allow-Origin", "http://localhost:8000");
+  response.setHeader("Access-Control-Allow-Origin", CLIENT_URL);
 
   const url = request.url.slice(1);
   if (!routes.has(url)) {
