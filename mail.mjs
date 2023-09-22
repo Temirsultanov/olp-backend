@@ -1,9 +1,8 @@
 import nodemailer from "nodemailer";
-import path from "node:path";
 
-const MAIL = "test350350350@gmail.com";
-const PASSWORD = "dnbf kviw bfpi wmnr"
-const DESTINATION_MAIL = "temirsultanov.dev@gmail.com"
+const MAIL = "v.vladimirov@olp.su";
+const PASSWORD = "???"
+const DESTINATION_MAIL = "v.vladimirov@olp.su"
 
 const mailTransporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -70,8 +69,6 @@ export const sendMail = (url, data) => {
       encoding: "base64"
     }]
   }
-
-  console.log(mailDetails);
 
   mailTransporter.sendMail(mailDetails, mailResponseHandler);
 }
